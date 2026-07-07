@@ -7,32 +7,94 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button></button>
     <div id="main">
+
         <div class="search">
+            <button class="toggle"><img src="lightmode.png" alt="search" class="toggleimg"></button>
             <input type="text" placeholder="Enter your city...">
-            <button><img src="search.png" alt="search"></button>
+            <button class="search-button"><img src="search.png" alt="search"></button>
         </div>
-        <div class="weather">
-          <img src="rain.png" alt="rain" class="weather-icon">  
-          <h1 class="temp">21°C</h1>
-          <h2 class="city">Kozhikode</h2>
-          <div class="details">
-            <div class="col">
-                <img src="humidity.png" alt="humidity">
-                <div>
-                <p class="humidity">50%</p>
-                <p>Humidity</p>
+
+        <div class="weather-details">
+
+            <div class="error">
+             <p>Invalid city name...!</p>
+            </div>
+
+            <div class="weather">
+
+                <div class="fav">
+                <button class="favbutton"><img src="favoriteimg.png" alt="" class="favimg"></button>
+                <p>Favourite</p>
+                </div>
+
+                <img src="rain.png" alt="rain" class="weather-icon">  
+                <h1 class="temp">°C</h1>
+                <h2 class="city">Cityname</h2>
+
+                <div class="details">
+
+                    <div class="col">
+                        <img src="humidity.png" alt="humidity">
+
+                        <div>                    
+                        <p class="humidity">%</p>
+                        <p>Humidity</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="wind.png" alt="wind">
+
+                        <div>
+                        <p class="windspeed">km/h</p>
+                        <p>Wind Speed</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img src="wind.png" alt="wind">
-                <div>
-                <p class="windspeed">15 km/h</p>
-                <p>Wind Speed</p>
-                </div>
-            </div>
-          </div>
         </div>
+
+        <!-- <div class="forcast">
+            <h1>5-Day-Forecast</h1>
+
+            <div class="day1">
+                <h2>Date</h2>
+                <img src="" alt="image">
+                <h2>Discription</h2>
+            </div>
+
+            <div class="day2">
+                <h2>Date</h2>
+                <img src="" alt="image">
+                <h2>Discription</h2>
+            </div>
+
+            <div class="day3">
+                <h2>Date</h2>
+                <img src="" alt="image">
+                <h2>Discription</h2>
+            </div>
+
+            <div class="day4">
+                <h2>Date</h2>
+                <img src="" alt="image">
+                <h2>Discription</h2>
+            </div>
+
+            <div class="day5">
+                <h2>Date</h2>
+                <img src="" alt="image">
+                <h2>Discription</h2>
+            </div>
+
+        </div> -->
+       <div class="favourite">
+           <h1>Favourite</h1>
+           <div class="favlist"></div>
+       </div>
+
     </div>
     <script src="script.js">
 

@@ -4,26 +4,48 @@
     font-family:'Times New Roman', Times, serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
 }
 body{
     background-color: #222;
+    background-image:url("background1.jpeg");
+    background-repeat: no-repeat;
+
     
 }
+
 #main{
-    background-color: rgb(4, 81, 81);
+    background-color: rgba(41, 35, 30, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
     width: 90%;
     max-width: 470px;
     padding: 40px 35px;
     margin: 100px auto 0;
     border-radius: 20px;
-    margin-left: 300px;
+    margin-left: 500px;
     text-align: center;
+    border-radius: 50px;
+    max-height: 85vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    
+
 }
 .search{
+    background-color: rgba(126, 109, 102, 0.6);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 20px;
+    height: 70px;
+    padding: 15px;
 
 }
 .search input{
@@ -32,20 +54,73 @@ body{
     padding:10px 25px;
     border-radius:30px;
     height:50px ;
-    margin-right:16px ;
+    margin-right:6px ;
+    margin-left: 6px;
     flex: 1;
     font-size: 18px;
 }
-.search button{
+.search-button{
     border-radius:50%;
     border: 0;
     outline: 0;
     height: 50px;
-    width: 50px;
+    width: 60px;
     cursor: pointer;
+}
+.toggle{
+    border-radius:50%;
+    border: 0;
+    outline: 0;
+    height: 50px;
+    width: 60px;
+    cursor: pointer;
+}
+.toggle img{
+    height: 30px;
+    width: 50px;
+}
+.search-button:active{
+    background-color: black;
 }
 .search img{
     width: 16px;
+}
+.fav{
+    padding-left: 270px;
+    padding-top: 20px;
+}
+.favimg{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+
+}
+.favbutton{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    border: none;
+}
+.fav p{
+    font-size: 18px;
+    color: white;
+}
+
+
+.weather-details{
+ background-color: rgba(126, 109, 102, 0.6);
+ border-radius: 20px;
+ padding: 0px;   
+}
+.error{
+    display:none;
+    font-size: 25px;
+    color: white;
+}
+.weather{
+    display: none;
+    padding-bottom: 20px;
 }
 .weather-icon{
     width: 170px;
@@ -54,11 +129,13 @@ body{
 .weather h1{
     font-size: 80px;
     font-weight: 500px;
+    color:white;
 }
 .weather h2{
     font-size: 45px;
     font-weight: 400px;
     margin-top: -10px;
+    color: ;
 }
 .details{
     display: flex;
@@ -80,4 +157,46 @@ body{
 .humidity,.windspeed{
     font-size: 28px;
     margin-top:-6px;
+}
+.forcast{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 15px;
+    background-color: rgba(126, 109, 102, 0.6);
+    border-radius: 20px;
+    padding: 15px; 
+}
+.forcast div{
+background-color: rgb(212, 212, 212);
+width: 150px;
+padding:10px 10px;
+margin: 5px;
+border-radius:20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+
+}
+.favourite{
+display: flex;
+flex-direction: column;
+align-items:center;
+gap: 15px;
+background-color: rgba(126, 109, 102, 0.6);
+border-radius: 20px;
+padding: 15px; 
+}
+.favlist{
+    background-color: rgba(41, 35, 30, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color:white;
+}
+.favcity:active{
+ color: rgb(91, 91, 234);
 }
