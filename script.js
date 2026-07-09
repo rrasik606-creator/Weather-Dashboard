@@ -8,6 +8,7 @@ const toggleimage=document.querySelector(".toggleimg");
 const favimg=document.querySelector(".favimg");
 
 async function weathercheck(city){
+  try{
     const response=await fetch(api+city);
     const data =await response.json();
     if(data.cod==404){
@@ -42,6 +43,10 @@ async function weathercheck(city){
 
         updateFavIcon();
     }
+  }
+  catch{
+    console.log("Error occur:",error)
+  }
 }
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -66,7 +71,29 @@ function displayFavorites() {
 
         const cityDiv = document.createElement("div");
         cityDiv.classList.add("favcity");
-        cityDiv.innerText = city;
+
+        const cityName = document.createElement("span");
+        cityName.innerText = city;
+        cityName.classList.add("favcity-name");
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "⛔";
+        deleteBtn.classList.add("favdelete");
+
+        cityDiv.appendChild(cityName);
+        cityDiv.appendChild(deleteBtn);
+
+        cityDiv.style.cursor = "pointer";
+        cityName.addEventListener("click", () => {
+            weathercheck(city);
+        });
+
+        deleteBtn.addEventListener("click", () => {
+            favorites = favorites.filter(c => c !== city);
+            saveFavorites();
+            displayFavorites();
+            updateFavIcon();
+        });
 
         favList.appendChild(cityDiv);
 
@@ -81,24 +108,7 @@ function updateFavIcon() {
     } else {
         favimg.src = "favoriteimg.png";
     }
-
-}
-
-function displayFavorites() {
-    const favList = document.querySelector(".favlist");
-    favList.innerHTML = "";
-    favorites.forEach(city => {
-        const cityDiv = document.createElement("div");
-        cityDiv.classList.add("favcity");
-        cityDiv.innerText = city;
-        cityDiv.style.cursor = "pointer";
-        cityDiv.addEventListener("click", () => {
-          searchbox.value="";
-        weathercheck(city);
-        });
-        favList.appendChild(cityDiv);
-    });
-}
+  }
 
 function debounce(func, delay) {
     let timer;
